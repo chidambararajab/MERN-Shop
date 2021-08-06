@@ -14,7 +14,7 @@ const products = [
   },
   {
     _id: '2',
-    name: 'Men Black Solid Horsebit Loafers',
+    name: 'Men Black Loafers',
     image: '/images/image2.jpg',
     description:
       'A pair of round toe black loafers, has regular styling, slip-on detailing | PU upper | Cushioned footbed | Textured and patterned outsole | Warranty: 3 months | Provided by Brand/Manufacturer',
@@ -27,16 +27,16 @@ const products = [
   },
   {
     _id: '3',
-    name: 'Men Chunky Sneakers',
+    name: 'Men Bulky Sneakers',
     image: '/images/image3.jpg',
     description:
       'Upper composed of high quality synthetic leather with mesh underlays for breathability | Lace up design locks your foot across the mid foot work with the laces to help to keep your foot from shifting within the shoe & gives you secure fit.',
-    brand: 'HRX by Hrithik Roshan',
+    brand: 'HRX',
     category: 'Shoes',
     price: 929.99,
     countInStock: 5,
     rating: 4.1,
-    numReviews: 12,
+    numReviews: 13,
   },
   {
     _id: '4',
@@ -49,7 +49,7 @@ const products = [
     price: 4399,
     countInStock: 11,
     rating: 5,
-    numReviews: 12,
+    numReviews: 16,
   },
   {
     _id: '5',
@@ -75,15 +75,15 @@ const products = [
     price: 7350,
     countInStock: 0,
     rating: 4,
-    numReviews: 12,
+    numReviews: 11,
   },
   {
     _id: '7',
-    name: 'Men Flex Street Shoe',
+    name: 'Men Street Shoe',
     image: '/images/image7.jpg',
     description:
       'Product description: The Lifestyle Shoes from the Flex Street Series sports a modern design and high performance materials that make any kind of activity easier. Features: -Upper is Constructed with knitted fabric, -Cushion collar provides ankle support, -Flexible EVA Sole makes the shoes more comfortable & light weight, -Cup shaped insole gives additional support and comfort.',
-    brand: 'HRX by Hrithik Roshan',
+    brand: 'HRX',
     category: 'Shoes',
     price: 1749,
     countInStock: 6,
@@ -92,7 +92,7 @@ const products = [
   },
   {
     _id: '8',
-    name: 'Men White Baymax Sneakers',
+    name: 'Men White Sneakers',
     image: '/images/image8.jpg',
     description:
       'Design Details: A pair of round toe white sneakers ,has regular styling | Lace-ups detail | Synthetic upper | Cushioned footbed | Textured and patterned outsole Warranty: 3 months',
