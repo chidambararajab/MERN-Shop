@@ -1,6 +1,6 @@
 # Shopping Web-App Created Using React-js, Node-js, Express, Mongo-DB compass
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+LinkedIn profile [chidambararajab](https://in.linkedin.com/in/chidambararajab).
 
 ## Available Scripts
 
