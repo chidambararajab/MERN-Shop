@@ -73,7 +73,7 @@ const products = [
     brand: 'Lacoste',
     category: 'Shoes',
     price: 7350,
-    countInStock: 0,
+    countInStock: 10,
     rating: 4,
     numReviews: 11,
   },
@@ -99,10 +99,10 @@ const products = [
     brand: 'Puma',
     category: 'Shoes',
     price: 3444,
-    countInStock: 1,
+    countInStock: 0,
     rating: 4.8,
     numReviews: 5,
   },
 ];
 
-export default products;
+module.exports = products;
