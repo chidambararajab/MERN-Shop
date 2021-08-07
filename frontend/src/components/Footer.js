@@ -8,7 +8,7 @@ const Footer = () => {
         backgroundColor: '#272727',
         height: '100px',
         color: '#f7f7f7',
-        justifyContent: 'center',
+        bottom: 0,
       }}
     >
       <Row>
