@@ -4,6 +4,7 @@ import colors from "colors";
 
 import productRoutes from "./routes/productRoutes.js";
 import connectDB from "./config/db.js";
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 // To get every environment variable to this folder.
 dotenv.config();
@@ -17,6 +18,12 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
+
+// Wrong url or not found.
+app.use(notFound);
+
+// custom error handler, sometimes 200 status generate even with error so handle that and annded stack trace only for development purpose.
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
