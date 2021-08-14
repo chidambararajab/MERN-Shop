@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import products from './data/products.js';
 
+// To get every environment variable to this folder.
 dotenv.config();
 
 const app = express();
