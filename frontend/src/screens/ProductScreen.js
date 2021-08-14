@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 import {
   Row,
   Col,
@@ -9,9 +9,10 @@ import {
   Card,
   Button,
   Container,
-} from 'react-bootstrap';
+} from "react-bootstrap";
 
-import Rating from '../components/Rating';
+import Rating from "../components/Rating";
+import PropTypes from "prop-types";
 
 // match prop helps to find the id in url.
 const ProductScreen = ({ match }) => {
@@ -26,23 +27,23 @@ const ProductScreen = ({ match }) => {
   }, [match.params.id]);
 
   return (
-    <div style={{ paddingTop: '70px' }}>
-      <Link className='btn btn-light my-3' to='/'>
+    <div style={{ paddingTop: "70px" }}>
+      <Link className="btn btn-light my-3" to="/">
         {`<---`}
       </Link>
-      <Container className='mx-5 my-3'>
+      <Container className="mx-5 my-3">
         <Row>
           <Col md={3}>
             <Image src={product.image} alt={product.name} />
           </Col>
           <Col md={5}>
-            <ListGroup variant='flush'>
+            <ListGroup variant="flush">
               <ListGroup.Item>
                 <h6
                   style={{
                     padding: 0,
                     margin: 1,
-                    color: 'gray',
+                    color: "gray",
                   }}
                 >
                   {`${product.brand} `}
@@ -79,19 +80,18 @@ const ProductScreen = ({ match }) => {
                     </Col>
                     <Col>
                       <strong>
-                        {console.log(product.countInStock)}
                         {product.countInStock > 0 ? (
-                          <span style={{ color: '#007600' }}>In Stock</span>
+                          <span style={{ color: "#007600" }}>In Stock</span>
                         ) : (
-                          <span style={{ color: '#B12704' }}>Out Of Stock</span>
+                          <span style={{ color: "#B12704" }}>Out Of Stock</span>
                         )}
                       </strong>
                     </Col>
                   </Row>
                   <Row>
                     <span
-                      className='mt-2'
-                      style={{ color: '#272727', fontSize: '12px' }}
+                      className="mt-2"
+                      style={{ color: "#272727", fontSize: "12px" }}
                     >
                       Sold by @{product.brand}
                     </span>
@@ -99,15 +99,15 @@ const ProductScreen = ({ match }) => {
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Button
-                    className='btn-block'
-                    disabled={(product.countInStock = 0)}
-                    type='button'
+                    className="btn-block"
+                    disabled={product.countInStock == 0}
+                    type="button"
                     style={{
-                      color: '#f7f7f7',
-                      backgroundColor: '#272727',
+                      color: "#f7f7f7",
+                      backgroundColor: "#272727",
                       borderRadius: 5,
-                      width: '100%',
-                      borderColor: '#272727',
+                      width: "100%",
+                      borderColor: "#272727",
                     }}
                   >
                     Add To Cart
