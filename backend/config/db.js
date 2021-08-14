@@ -8,7 +8,7 @@ const connectDB = async () => {
     });
     console.log(`MangoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`Error in DB: ${error.message}`);
+    console.error(`Error in DB: ${error.message}`.red);
   }
 };
 
