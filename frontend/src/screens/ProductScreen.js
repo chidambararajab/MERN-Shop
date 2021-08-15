@@ -12,7 +12,6 @@ import {
 } from "react-bootstrap";
 
 import Rating from "../components/Rating";
-import PropTypes from "prop-types";
 
 // match prop helps to find the id in url.
 const ProductScreen = ({ match }) => {
@@ -27,11 +26,23 @@ const ProductScreen = ({ match }) => {
   }, [match.params.id]);
 
   return (
-    <div style={{ paddingTop: "70px" }}>
+    <div
+      style={{
+        paddingTop: "70px",
+      }}
+    >
       <Link className="btn btn-light my-3" to="/">
         {`<---`}
       </Link>
-      <Container className="mx-5 my-3">
+      <Container
+        className="m-2"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <Row>
           <Col md={3}>
             <Image src={product.image} alt={product.name} />
@@ -100,7 +111,7 @@ const ProductScreen = ({ match }) => {
                 <ListGroup.Item>
                   <Button
                     className="btn-block"
-                    disabled={product.countInStock == 0}
+                    disabled={product.countInStock === 0}
                     type="button"
                     style={{
                       color: "#f7f7f7",
