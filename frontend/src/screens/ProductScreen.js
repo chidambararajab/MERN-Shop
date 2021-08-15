@@ -34,20 +34,16 @@ const ProductScreen = ({ match }) => {
       <Link className="btn btn-light my-3" to="/">
         {`<---`}
       </Link>
-      <Container
-        className="m-2"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <Container className="m-2">
         <Row>
-          <Col md={3}>
-            <Image src={product.image} alt={product.name} />
+          <Col md={3} style={{ margin: "3% 0" }}>
+            <Image
+              src={product.image}
+              alt={product.name}
+              style={{ maxHeight: "500px", maxWidth: "250px" }}
+            />
           </Col>
-          <Col md={5}>
+          <Col md={5} style={{ margin: "3% 0" }}>
             <ListGroup variant="flush">
               <ListGroup.Item>
                 <h6
@@ -67,11 +63,16 @@ const ProductScreen = ({ match }) => {
                   text={` ${product.numReviews} reviews`}
                 />
               </ListGroup.Item>
-              <ListGroup.Item>₹ {product.price}</ListGroup.Item>
-              <ListGroup.Item>{product.description}</ListGroup.Item>
+              <ListGroup.Item>
+                <h6>₹ {product.price}</h6>
+              </ListGroup.Item>
+              <ListGroup.Item>
+                <strong>Product Description: </strong>
+                {product.description}
+              </ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col md={3}>
+          <Col md={3} style={{ margin: "3% 0" }}>
             <Card>
               <ListGroup>
                 <ListGroup.Item>
