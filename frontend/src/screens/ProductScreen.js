@@ -19,7 +19,7 @@ import { listProductDetails } from "../actions/productActions";
 
 // match prop helps to find the id in url.
 const ProductScreen = ({ history, match }) => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
@@ -131,6 +131,7 @@ const ProductScreen = ({ history, match }) => {
                         <Col>
                           <Form.Control
                             as="select"
+                            value={qty}
                             onChange={(e) => setQty(e.target.value)}
                           >
                             {[...Array(product.countInStock).keys()].map(
