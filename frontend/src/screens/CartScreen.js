@@ -8,13 +8,11 @@ import {
   Image,
   Card,
   Button,
-  Container,
   Form,
-  ListGroupItem,
 } from "react-bootstrap";
 
 import Message from "../components/Message";
-import { addToCart } from "../actions/cartActions";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 
 const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id;
@@ -22,17 +20,22 @@ const CartScreen = ({ match, location, history }) => {
 
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-  const { loading, error, cartItems } = cart;
+  const { cartItems } = cart;
   console.log(cartItems);
 
-  useEffect(async () => {
+  useEffect(() => {
     if (productId) {
-      await dispatch(addToCart(productId, qty));
+      dispatch(addToCart(productId, qty));
     }
   }, [dispatch, productId, qty]);
 
   const removeFromCartHandler = (id) => {
-    console.log("remove");
+    dispatch(removeFromCart(id));
+  };
+
+  const checkoutHandler = () => {
+    history.push("/login?redirect=shipping");
+    console.log("onClicked => Place Order");
   };
 
   return (
@@ -101,6 +104,7 @@ const CartScreen = ({ match, location, history }) => {
                   </Col>
                   <Col md={1}>
                     <Button
+                      className="btn-danger"
                       type="button"
                       varient="light"
                       onClick={() => removeFromCartHandler(cartItem.product)}
@@ -114,17 +118,35 @@ const CartScreen = ({ match, location, history }) => {
           </ListGroup>
         )}
       </Col>
-      <Col md={4}>
+      <Col md={3}>
         <Card>
           <ListGroup variant="flush">
-            <h2>
-              Subtotal (
-              {cartItems.reduce(
-                (accumilater, item) => accumilater + item.qty,
-                0
-              )}
-              ) items
-            </h2>
+            <ListGroup.Item>
+              <h6>
+                Subtotal (
+                {cartItems.reduce(
+                  (accumilater, item) => accumilater + item.qty,
+                  0
+                )}
+                ) items
+              </h6>
+              {`₹ ${cartItems
+                .reduce(
+                  (accumilater, item) => accumilater + item.qty * item.price,
+                  0
+                )
+                .toFixed(2)}`}
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <Button
+                type="button"
+                className="btn-block btn-primary rounded w-100"
+                disabled={cartItems.length === 0}
+                onClick={checkoutHandler}
+              >
+                Place Order
+              </Button>
+            </ListGroup.Item>
           </ListGroup>
         </Card>
       </Col>

@@ -5,7 +5,6 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
     case CART_ADD_ITEM:
       const item = action.payload;
 
-      console.log(state.cartItems);
       const existingItem = state.cartItems.find(
         (x) => x.product === item.product
       );
@@ -23,6 +22,13 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
           cartItems: [...state.cartItems, item],
         };
       }
+
+    case CART_REMOVE_ITEM:
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((i) => i.product !== action.payload),
+      };
+
     default:
       return state;
   }
