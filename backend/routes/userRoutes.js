@@ -14,7 +14,7 @@ const router = express.Router();
  * @route   POST /api/users
  * @access  Public
  */
-router.route("/").post(registerNewUser);
+router.route("/").get(registerNewUser);
 
 /**
  * @desc    Auth user & get token
