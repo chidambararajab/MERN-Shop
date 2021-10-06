@@ -73,5 +73,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 NODE_ENV = development
 PORT = 5000
-MANGO_DB = mongodb+srv://chid:chid@cluster0.poswi.mongodb.net/MernShopDatabase?retryWrites=true&w=majority
-JWT_SECRET = abcd1234
+MANGO_DB = mongodb+srv://xxxx:xxxx@cluster0.poswi.mongodb.net/MernShopDatabase?retryWrites=true&w=majority
+JWT_SECRET = xxxx0000
