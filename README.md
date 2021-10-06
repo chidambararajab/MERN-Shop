@@ -68,3 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Env Variables
+
+NODE_ENV = development
+PORT = 5000
+MANGO_DB = mongodb+srv://chid:chid@cluster0.poswi.mongodb.net/MernShopDatabase?retryWrites=true&w=majority
+JWT_SECRET = abcd1234
